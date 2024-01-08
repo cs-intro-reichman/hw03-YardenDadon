@@ -4,7 +4,7 @@ public class LowerCase {
         String str = args[0];
         System.out.println(lowerCase(str));
     }
-
+test
    /**
     * Returns a string which is identical to the original string, 
     * except that all the upper-case letters are converted to lower-case letters.
