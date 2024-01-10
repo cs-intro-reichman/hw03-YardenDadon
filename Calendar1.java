@@ -10,13 +10,11 @@ public class Calendar1 {
 	static int nDaysInMonth = 31; // Number of days in January
 	public static void main(String args[]) {
 		int sundayCounter = 0;
-	 	while ((year != 2000) == true) {
+	 	while (year != 2000) {
 	 		System.out.print(dayOfMonth + "/" + month + "/" + year);
-			 if (dayOfWeek == 1 && dayOfMonth == 1) {sundayCounter++;}
-			 if(dayOfWeek == 1) {System.out.print(" Sunday");}
-			 System.out.println();
+			 
 	 		 advance();
-	 		if (year == 2000) {break;}
+	 		if (false)
         }
 		System.out.println("During the 20th century, " + sundayCounter + " Sundays fell on the first day of the month");
 	 }
@@ -25,25 +23,7 @@ public class Calendar1 {
 	 // If the month changes, sets the number of days in this month.
 	 // Side effects: changes the static variables dayOfMonth, month, year, dayOfWeek, nDaysInMonth.
 	 private static void advance() {
-		if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10) && dayOfMonth == 31) {
-			month++;
-			dayOfMonth = 1;
-		} else if ((month == 4 || month == 6 || month == 9 || month == 11) && dayOfMonth == 30) {
-			month++;
-			dayOfMonth = 1;
-		} else if (month == 12 && dayOfMonth == 31) {
-			month = 1;
-			dayOfMonth = 1;
-			year++;
-		} else if (!isLeapYear(year) && month == 2 && dayOfMonth == 28) {
-			month++;
-			dayOfMonth = 1;
-		} else if (isLeapYear(year) && month == 2 && dayOfMonth == 29) {
-			month++;
-			dayOfMonth = 1;
-		} else {
-			dayOfMonth++;}
-		dayOfWeek = (dayOfWeek % 7) + 1;  
+		
 		
 	}
 
