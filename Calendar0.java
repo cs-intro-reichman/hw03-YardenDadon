@@ -13,30 +13,85 @@ public class Calendar0 {
 		 
 	// Tests the isLeapYear function.
 	private static void isLeapYearTest(int year) {
-		String commonOrLeap = "common";
-		if (isLeapYear(year)) {
-			commonOrLeap = "leap";
-		}
+		String commonOrLeap;
+		if (isLeapYear(year) == true) {commonOrLeap = "leap";}
+		else {commonOrLeap = "common";}
+
 		System.out.println(year + " is a " + commonOrLeap + " year");  
 	}
 
 	// Tests the nDaysInMonth function.
 	private static void nDaysInMonthTest(int year) {
-		// Replace this comment with your code
+		for (int i = 0; i < 12; i++){
+			int monthValue = i + 1;
+			System.out.println("Month " + monthValue + " has " + nDaysInMonth(i, year) + " days");
+		}
 	}
-
-	// Returns true if the given year is a leap year, false otherwise.
 	public static boolean isLeapYear(int year) {
-	    // Replace the following statement with your code
-		return false;
+		boolean leapTruthFalse;
+	    if (year % 4 == 0){ leapTruthFalse = true;}
+		else {leapTruthFalse = false;}
+		return leapTruthFalse;
 	}
-	 
-	// Returns the number of days in the given month and year.
-	// April, June, September, and November have 30 days each.
-	// February has 28 days in a common year, and 29 days in a leap year.
-	// All the other months have 31 days.
 	public static int nDaysInMonth(int month, int year) {
-		// Replace the following statement with your code
-		return 0;
+		//use switch cases, and call isLeapYear
+		int days = 0;
+		if (isLeapYear(year) == true){
+			switch(month){
+				case 0: days = 31;
+				break;
+				case 1: days = 29;
+				break;
+				case 2: days = 31;
+				break;
+				case 3: days = 30;
+				break;
+				case 4: days = 31;
+				break;
+				case 5: days = 30;
+				break;
+				case 6: days = 31;
+				break;
+				case 7: days = 31;
+				break;
+				case 8: days = 30;
+				break;
+				case 9: days = 31;
+				break;
+				case 10: days = 30;
+				break;
+				case 11: days = 31;
+				break;
+			}
+		}
+			else {
+				switch(month){
+					case 0: days = 31;
+					break;
+					case 1: days = 28;
+					break;
+					case 2: days = 31;
+					break;
+					case 3: days = 30;
+					break;
+					case 4: days = 31;
+					break;
+					case 5: days = 30;
+					break;
+					case 6: days = 31;
+					break;
+					case 7: days = 31;
+					break;
+					case 8: days = 30;
+					break;
+					case 9: days = 31;
+					break;
+					case 10: days = 30;
+					break;
+					case 11: days = 31;
+					break;
+				}
+			}		
+			return days;
 	}
 }
