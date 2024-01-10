@@ -39,8 +39,12 @@ public class LoanCalc {
 	*/
 	// Side effect: modifies the class variable iterationCounter.
     public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {  
-    	// Replace the following statement with your code
-    	return 0;
+    	double payment = loan / n;
+		while(endBalance(loan,rate,n,payment) > 0){
+			payment = payment + epsilon;
+			iterationCounter++;
+		}
+    	return payment;
     }
     
     /**
@@ -51,8 +55,20 @@ public class LoanCalc {
 	*/
 	// Side effect: modifies the class variable iterationCounter.
     public static double bisectionSolver(double loan, double rate, int n, double epsilon) {  
-    	// Replace the following statement with your code
-    	return 0;
+    	double L = loan/n;
+		double H = loan;
+		double payment;
+		double end=0;
+		iterationCounter = 0;
+		do{
+			iterationCounter++;
+			payment = ( L + H ) / 2;
+			end = endBalance(loan, rate, n, payment);
+			if(end>0){L = L + (H - L) / 2;}
+			else{H = H - (H - L) / 2;}
+		}
+		while(H - L > epsilon);
+    	return payment;
     }
 	
 	/**
@@ -60,7 +76,11 @@ public class LoanCalc {
 	* interest rate (as a percentage), the number of periods (n), and the periodical payment.
 	*/
 	private static double endBalance(double loan, double rate, int n, double payment) {
-		// Replace the following statement with your code
-    	return 0;
+		loan = loan - payment;
+		for (int i = 0; i < (n - 1); i++){
+			loan = loan + (loan * rate / 100);
+			loan = loan - payment;
+		}
+    	return loan;
 	}
 }
