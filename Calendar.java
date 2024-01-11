@@ -17,7 +17,7 @@ public class Calendar {
 	    //// Write the necessary initialization code, and replace the condition
 	    //// of the while loop with the necessary condition 
 	 	while (year < goal) {
-	 		if (dayOfWeek == 1){
+	 		if (dayOfWeek == 7){
 				System.out.println(dayOfMonth + "/" + month + "/" + year + " Sunday");
 				}
 			else {
