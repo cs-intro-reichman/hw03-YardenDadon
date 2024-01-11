@@ -10,25 +10,17 @@ public class Calendar {
 	static int nDaysInMonth = 31; // Number of days in January
 	public static void main(String args[]) {
 		int goal = Integer.parseInt(args[0]);
-		year = goal;
-		// Advances the date and the day-of-the-week from 1/1/1900 till 31/12/1999, inclusive.
-	    // Prints each date dd/mm/yyyy in a separate line. If the day is a Sunday, prints "Sunday".
-	    // The following variable, used for debugging purposes, counts how many days were advanced so far.
-	    //// Write the necessary initialization code, and replace the condition
-	    //// of the while loop with the necessary condition 
-	 	while (year-1 < goal) {
-	 		if (dayOfWeek == 7){
+	 	while (year <= goal) {
+			if (year > goal - 1){
+	 		if (dayOfWeek == 1){
 				System.out.println(dayOfMonth + "/" + month + "/" + year + " Sunday");
 				}
 			else {
 				System.out.println(dayOfMonth + "/" + month + "/" + year);
 			}
 			advance();		
-		}
+			}else {advance();}}
 	 }
-	
-	 // Advances the date (day, month, year) and the day-of-the-week.
-	 // If the month changes, sets the number of days in this month.
 	 // Side effects: changes the static variables dayOfMonth, month, year, dayOfWeek, nDaysInMonth.
 	 private static void advance() {
 		dayOfMonth++;
