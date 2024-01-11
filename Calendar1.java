@@ -16,7 +16,7 @@ public class Calendar1 {
 	    //// of the while loop with the necessary condition 
 		int sundayCounter = 0;
 	 	while (year != 2000) {
-	 		if (dayOfWeek == 1){
+	 		if (dayOfWeek == 7){
 				System.out.println(dayOfMonth + "/" + month + "/" + year + " Sunday");
 				if (dayOfMonth == 1) {
 					sundayCounter++;
